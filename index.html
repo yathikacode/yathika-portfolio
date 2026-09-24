@@ -5,32 +5,125 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yathika | Portfolio</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-  body { background: #0f1115; color: #e6e6e6; line-height: 1.6; }
-  header { text-align: center; padding: 60px 20px 40px; }
-  header h1 { font-size: 2.5rem; color: #4fd1c5; }
-  header p { color: #a0a0a0; margin-top: 10px; }
-  section { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
-  h2 { color: #4fd1c5; border-bottom: 2px solid #2a2e37; padding-bottom: 8px; margin-bottom: 15px; }
-  .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-  .skill { background: #1c2028; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
-  .project { background: #1c2028; padding: 18px; border-radius: 10px; margin-bottom: 15px; }
-  .project h3 { color: #fff; margin-bottom: 6px; }
-  .project p { color: #b0b0b0; font-size: 0.95rem; }
-  footer { text-align: center; padding: 30px; color: #777; font-size: 0.9rem; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e6e6e6;
+    line-height: 1.7;
+    background-attachment: fixed;
+  }
+  header {
+    text-align: center;
+    padding: 100px 20px 60px;
+  }
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4fd1c5, #a78bfa);
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0f0c29;
+    box-shadow: 0 0 40px rgba(79, 209, 197, 0.4);
+  }
+  header h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #4fd1c5, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+  header p {
+    color: #b8b8d1;
+    margin-top: 12px;
+    font-size: 1.1rem;
+  }
+  section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 25px;
+  }
+  h2 {
+    font-size: 1.6rem;
+    color: #4fd1c5;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 18px;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 4px;
+    width: 6px; height: 24px;
+    background: linear-gradient(180deg, #4fd1c5, #a78bfa);
+    border-radius: 3px;
+  }
+  .about-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+  }
+  .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+  .skill {
+    background: rgba(79, 209, 197, 0.12);
+    border: 1px solid rgba(79, 209, 197, 0.4);
+    color: #4fd1c5;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+  }
+  .skill:hover { transform: translateY(-3px); }
+  .project {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 22px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .project:hover {
+    transform: translateY(-4px);
+    border-color: #a78bfa;
+  }
+  .project h3 { color: #fff; margin-bottom: 6px; font-size: 1.1rem; }
+  .project p { color: #b8b8d1; font-size: 0.95rem; }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: #8a8aa3;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 30px;
+  }
   a { color: #4fd1c5; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
 <header>
+  <div class="avatar">Y</div>
   <h1>Yathika</h1>
-  <p>Computer Science & Business Systems Student | Data Analytics Intern</p>
+  <p>Computer Science & Business Systems Student</p>
 </header>
 
 <section>
   <h2>About Me</h2>
-  <p>I'm a third-year CSBS (Computer Science and Business Systems) student at Aalim Muhammad Salegh College of Engineering, Chennai. I completed my Data Analytics Internship at S Logic OPC Private Limited. I enjoy building practical projects and learning new technologies.</p>
+  <div class="about-card">
+    <p>I'm a third-year CSBS (Computer Science and Business Systems) student at Aalim Muhammad Salegh College of Engineering, Chennai. I completed my Data Analytics internship at S Logic OPC Private Limited, where I worked on practical data projects. I enjoy building things and learning new technologies.</p>
+  </div>
 </section>
 
 <section>
@@ -53,55 +146,53 @@
     <p>A Flask + SQLite based web app to track income and expenses, deployed on Render.</p>
   </div>
   <div class="project">
-    <h3>RecordEase</h3>
-    <p>A full-stack business record management system built for a hackathon.</p>
-  </div>
-  <div class="project">
     <h3>Smart Mobility Hackathon</h3>
     <p>Worked on public transport route optimization as part of a hackathon project.</p>
   </div>
 </section>
- 
- <section>
+
+<section>
   <h2>Certifications</h2>
-  <div class="project">
-    <h3>Data Science and Analytics</h3>
-    <p>HP · Issued Aug 2026</p>
-  </div>
-  <div class="project">
-    <h3>Getting Started with Data</h3>
-    <p>IBM · Issued Aug 2026</p>
-  </div>
-  <div class="project">
-    <h3>Machine Learning Models in Power BI</h3>
-    <p>Infosys Springboard</p>
-  </div>
-  <div class="project">
-    <h3>Power BI Administration</h3>
-    <p>Infosys Springboard · Issued Jan 2026</p>
-  </div>
-  <div class="project">
-    <h3>Impacteers Certification</h3>
-    <p>Impacteers · Issued Sep 2025</p>
-  </div>
-  <div class="project">
-    <h3>AI Fluency for Students</h3>
-    <p>Anthropic · Issued Apr 2026</p>
+  <div class="cert-grid">
+    <div class="project">
+      <h3>Data Science and Analytics</h3>
+      <p>HP · Aug 2026</p>
+    </div>
+    <div class="project">
+      <h3>Getting Started with Data</h3>
+      <p>IBM · Aug 2026</p>
+    </div>
+    <div class="project">
+      <h3>Machine Learning Models in Power BI</h3>
+      <p>Infosys Springboard</p>
+    </div>
+    <div class="project">
+      <h3>Power BI Administration</h3>
+      <p>Infosys Springboard · Jan 2026</p>
+    </div>
+    <div class="project">
+      <h3>Impacteers Certification</h3>
+      <p>Impacteers · Sep 2025</p>
+    </div>
+    <div class="project">
+      <h3>AI Fluency for Students</h3>
+      <p>Anthropic · Apr 2026</p>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <p>GitHub: <a href="https://github.com/yathikacode" target="_blank">github.com/yathikacode</a></p>
+  <div class="about-card">
+    <p>GitHub: <a href="https://github.com/yathikacode" target="_blank">github.com/yathikacode</a></p>
+  </div>
 </section>
 
- <section>
-  <h2>Contact</h2>
-  <p>linkedin: <a href="https://www.linkedin.com/in/yathika-t-523795373/" target="_blank">linkedin.com</a></p>
-
- <footer>
+<footer>
   © 2026 Yathika. Built with HTML & CSS.
 </footer>
 
 </body>
 </html>
+  
+ 
